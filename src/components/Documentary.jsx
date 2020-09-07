@@ -27,7 +27,6 @@ const Documentary = () => {
 
     
     React.useEffect(() => {
-        window.setTimeout(() => handleResize(), 1000);
         window.addEventListener('resize', handleResize)
             
         return () => {
@@ -55,7 +54,7 @@ const Documentary = () => {
                     src={video}
                     autoPlay={true}
                     onLoadedData={() => {
-                        handleResize();
+                        window.setTimeout(() => handleResize(), 12500);
                         setLoaded(true);
                     }}
                     hasLoaded={hasLoaded}
