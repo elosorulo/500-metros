@@ -1,16 +1,25 @@
 import React from 'react';
 import './App.css';
-import Instalation from './Instalation';
+import Documentary from './Documentary';
 import InitialPage from './pages/InitialPage';
+import { MuiThemeProvider } from '@material-ui/core';
+import muiTheme from '../style/muiTheme';
 
-const App = props => {
+const App = () => {
 
   const [hasStarted, setStarted] = React.useState(false);
 
   return (
-    <div className="App">
-        {hasStarted ? <Instalation/> : <InitialPage start={() => setStarted(true)}/>}
-    </div>
+      <div className="App">
+        <MuiThemeProvider theme={muiTheme}>
+          {
+            hasStarted ?
+              <Documentary/>
+            :
+              <InitialPage start={() => {setStarted(true)}}/>
+          }
+        </MuiThemeProvider>
+      </div>
   );
 }
 

@@ -3,19 +3,19 @@ import Webcam from 'react-webcam';
 import styled from 'styled-components';
 
 const getHorizontalOffset = (left, width) => {
-    return left - width / 100 * 1.8;
+    return left + (width / 250);
 };
 
 const getVerticalOffset = (top, height) => {
-    return top + height / 100 * 68.5;
+    return top + height / 100 * 61.5;
 };
 
 const getHeight = (height) => {
-    return height / 100 * 40.8;
+    return height / 100 * 36.2;
 };
 
 const getWidth = (width) => {
-    return width / 100 * 40.8;
+    return width / 100 * 36.2;
 };
 
 const StyledWebCam = styled(Webcam)`
