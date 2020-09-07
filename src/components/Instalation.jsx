@@ -5,9 +5,9 @@ import video from '../assets/video.mp4';
 import WebCamStream from './WebCamStream';
 import VideoContainer from './VideoContainer';
 
-const Instalation = () => {
+const videoRef = React.createRef();
 
-    const videoRef = React.useRef();
+const Instalation = () => {
     
     const [offsetTop, setOffsetTop] = React.useState(0);
     const [offsetLeft, setOffsetLeft] = React.useState(0);
@@ -21,6 +21,7 @@ const Instalation = () => {
                 setOffsetLeft(videoRef.current.offsetLeft);
                 setOffsetWidth(videoRef.current.offsetWidth);
                 setOffsetHeight(videoRef.current.offsetHeight);
+                console.log(videoRef.current.offsetTop);       
             }
         }
         handleResize();
@@ -29,7 +30,7 @@ const Instalation = () => {
         return () => {
             window.removeEventListener('resize', handleResize)
         }
-    },[videoRef.current]);
+    },[]);
 
     return (
         <div>
