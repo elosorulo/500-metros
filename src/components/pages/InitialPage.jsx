@@ -16,8 +16,7 @@ const mobileHorizontal = !isVertical && isMobile && !isTablet;
 const Description = () => {
     return (
         <Grid item xs={12}>
-            <Title mobileHorizontal={mobileHorizontal}>500 Metros</Title>
-            <Credits mobileHorizontal={mobileHorizontal}>Ivana Kairiyama</Credits>
+            <Title mobileHorizontal={mobileHorizontal}>500m</Title>
         </Grid>
     );
 };

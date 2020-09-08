@@ -51,14 +51,15 @@ const Documentary = () => {
                 {!hasLoaded ? <CircularProgress/> : <></>}
                 <Video
                     ref={videoRef}
-                    src={video}
                     autoPlay={true}
                     onLoadedData={() => {
                         window.setTimeout(() => handleResize(), 12500);
                         setLoaded(true);
                     }}
                     hasLoaded={hasLoaded}
-                />
+                >
+                    <source src={video} type="video/mp4"/>
+                </Video>
             </VideoContainer>
         </div>
         
